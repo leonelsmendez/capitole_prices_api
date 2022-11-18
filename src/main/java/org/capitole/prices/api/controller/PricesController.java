@@ -26,7 +26,7 @@ public class PricesController {
     }
 
     @GetMapping("/final_price")
-    public PriceResponseDTO getPricesFinalPrice(
+    public PriceResponseDTO getFinalPrice(
         @RequestParam(name = "startDate", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) final LocalDateTime startDate,
         @RequestParam(name = "productId", required = false) final Integer productId,
         @RequestParam(name = "brandId" , required = false) final Integer brandId

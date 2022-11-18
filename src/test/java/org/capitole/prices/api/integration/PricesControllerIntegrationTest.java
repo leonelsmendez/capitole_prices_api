@@ -1,9 +1,8 @@
-package org.capitole.prices.api;
+package org.capitole.prices.api.integration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.capitole.prices.api.controller.PricesController;
 import org.capitole.prices.api.dto.PriceResponseDTO;
-import org.capitole.prices.api.dto.exception.ExceptionResponseDTO;
 import org.capitole.prices.api.exception.client.PriceNotFoundException;
 import org.capitole.prices.api.repository.IPricesRepository;
 import org.capitole.prices.api.service.impl.PricesService;

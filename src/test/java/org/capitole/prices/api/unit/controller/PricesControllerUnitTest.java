@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.time.LocalDateTime;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
@@ -30,7 +29,7 @@ public class PricesControllerUnitTest {
 
     @Before
     public void setUp() {
-        Price price = new Price(1L, 1, LocalDateTime.now(), LocalDateTime.now(), 1, 1, 1, 10.0, "CURR");
+        Price price = new Price(1L, 1, 1, 1, LocalDateTime.now(), LocalDateTime.now(), 1, 10.0, "CURR");
 
         when(pricesService.getFinalPrice(any(), any(), any())).thenReturn(price);
     }
@@ -44,5 +43,10 @@ public class PricesControllerUnitTest {
 
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void when_targetIsCalled_then_requestValidationException() {
 
+        Object result = target.getFinalPrice(null, 1, 1);
+
+    }
 }
